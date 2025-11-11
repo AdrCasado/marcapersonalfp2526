@@ -1,0 +1,16 @@
+
+<html>
+    <head>
+        <title>Mi Web</title>
+    </head>
+    <body>
+        <!-- Order your soul. Reduce your wants. - Augustine -->
+        @section('menu')
+            Contenido del menu
+        @show
+
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
