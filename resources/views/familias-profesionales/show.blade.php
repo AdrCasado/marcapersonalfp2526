@@ -6,7 +6,11 @@
 
         <div class="col-sm-4">
             {{-- TODO: Imagen de familias profesionales --}}
-            <img src="{{ asset('/images/mp-logo.png') }}" alt="" style="width: 100px" />
+            @if ($familiaProfesional->imagen)
+                <img width="300" style="height:300px" src="{{ Storage::url($familiasProfesionales->imagen) }}" alt="imagen" class="img-thumbnail">
+            @else
+                    <img width="300" style="height:300px" alt="Curriculum-vitae-warning-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Curriculum-vitae-warning-icon.svg/256px-Curriculum-vitae-warning-icon.svg.png">
+            @endif
 
 
         </div>
