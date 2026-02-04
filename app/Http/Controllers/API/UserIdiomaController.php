@@ -12,17 +12,19 @@ class UserIdiomaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request, User $user, Idioma $idioma)
+    public function index(Request $request)
     {
-
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user, Idioma $idioma)
     {
-        //
+        $user = User::find(1);
+
+        $user->idiomas()->attach($idioma);
     }
 
     /**
@@ -44,8 +46,8 @@ class UserIdiomaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, User $user, Idioma $idioma)
     {
-        //
+        $user->idiomas()->detach($idioma);
     }
 }
